@@ -19,7 +19,7 @@ return elem.truthfull;
 
 var doors = [];
 doors.push(new Door('Синяя', null, 0,
- 'Желтая дверь ведет к Дзюбе<br/>Либо желтая, либо красная дверь правильная',
+ 'Желтая дверь ведет к Дзюбе',//'Желтая дверь ведет к Дзюбе<br/>Либо желтая, либо красная дверь правильная',
   function(doors, rightDoor) {
         /*var statement2 = doors[2].truthfull || doors[1].truthfull;
         var statement1 = rightDoor === 2;
@@ -27,8 +27,9 @@ doors.push(new Door('Синяя', null, 0,
           return false;
         }
         return this.truthfull? statement1 : !statement1;*/
-  return this.truthfull ^ (!doors[2].truthfull);
-      }));
+    var statement = rightDoor === 2;
+    return this.truthfull ? statement : !statement;
+  }));
 doors.push(new Door('Красная', null, 1, 
   'Ты не выберешь эту дверь',
   function(doors, rightDoor) {
