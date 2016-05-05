@@ -32,13 +32,13 @@ window.onload = function() {
           }
 	  return this.truthfull? statement1 : !statement1;
 	}));
-  doors.push(new Door('Red', null, 1, 'Ты не выберешь эту дверь',
+  doors.push(new Door('Red', null, 1, 'РўС‹ РЅРµ РІС‹Р±РµСЂРµС€СЊ СЌС‚Сѓ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           var statement = rightDoor === 0;
           return this.truthfull ? statement : !statement;
         }));
   
-  doors.push(new Door('Blue', null, 2, 'Ты выберешь синюю дверь',
+  doors.push(new Door('Blue', null, 2, 'РўС‹ РІС‹Р±РµСЂРµС€СЊ СЃРёРЅСЋСЋ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           var statement = (rightDoor !== 1) && (rightDoor !== 2);
           return this.truthfull ? statement : !statement;
@@ -125,7 +125,7 @@ window.onload = function() {
   </style>
 </head>
 <body>
-  <p> 1 или 0 дверей правильные </p>
+  <p> 1 РёР»Рё 0 РґРІРµСЂРµР№ РїСЂР°РІРёР»СЊРЅС‹Рµ </p>
   <div id="doors">
     
   </div> 

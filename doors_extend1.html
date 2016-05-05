@@ -23,18 +23,18 @@ window.onload = function() {
   };
 
   var doors = [];
-  doors.push(new Door('Желтая', null, 0, '',
+  doors.push(new Door('Р–РµР»С‚Р°СЏ', null, 0, '',
 	function(doors, rightDoor) {
           var statement = rightDoor === 0 || rightDoor === 3;
           return this.truthfull? statement : !statement;
 	}));
-  doors.push(new Door('Зеленая', null, 1, 'Ты не выберешь эту дверь',
+  doors.push(new Door('Р—РµР»РµРЅР°СЏ', null, 1, 'РўС‹ РЅРµ РІС‹Р±РµСЂРµС€СЊ СЌС‚Сѓ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           var statement = (!doors[2].truthfull) && (!doors[4].truthfull);
           return this.truthfull ? statement : !statement;
         }));
   
-  doors.push(new Door('Синяя', null, 2, 'Ты выберешь синюю дверь',
+  doors.push(new Door('РЎРёРЅСЏСЏ', null, 2, 'РўС‹ РІС‹Р±РµСЂРµС€СЊ СЃРёРЅСЋСЋ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           var statement1 = rightDoor !== 1 && rightDoor !== 4;
           var statement2 = rightDoor === 2;
@@ -43,7 +43,7 @@ window.onload = function() {
           }
           return this.truthfull ? statement1 : !statement1;
         }));
-  doors.push(new Door('Фиолетовая', null, 2, 'Ты выберешь синюю дверь',
+  doors.push(new Door('Р¤РёРѕР»РµС‚РѕРІР°СЏ', null, 2, 'РўС‹ РІС‹Р±РµСЂРµС€СЊ СЃРёРЅСЋСЋ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           var statement1 = rightDoor === 1 || rightDoor === 2 || rightDoor === 4;
           var statement2 = !doors[rightDoor].truthfull;
@@ -52,7 +52,7 @@ window.onload = function() {
           }
           return this.truthfull ? statement1 : !statement1;
         }));
-  doors.push(new Door('Красная', null, 2, 'Ты выберешь синюю дверь',
+  doors.push(new Door('РљСЂР°СЃРЅР°СЏ', null, 2, 'РўС‹ РІС‹Р±РµСЂРµС€СЊ СЃРёРЅСЋСЋ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           var statement1 = !doors[3].truthfull;
           var statement2 = rightDoor === 0;
@@ -144,7 +144,7 @@ window.onload = function() {
   </style>
 </head>
 <body>
-  <p> 1 или 0 дверей правильные </p>
+  <p> 1 РёР»Рё 0 РґРІРµСЂРµР№ РїСЂР°РІРёР»СЊРЅС‹Рµ </p>
   <div id="doors">
     
   </div> 

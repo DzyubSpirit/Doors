@@ -23,7 +23,7 @@ window.onload = function() {
   };
 
   var doors = [];
-  doors.push(new Door('Синяя', null, 0, 'Желтая дверь ведет к Дзюбе<br/>Либо желтая, либо красная дверь правильная',
+  doors.push(new Door('РЎРёРЅСЏСЏ', null, 0, 'Р–РµР»С‚Р°СЏ РґРІРµСЂСЊ РІРµРґРµС‚ Рє Р”Р·СЋР±Рµ<br/>Р›РёР±Рѕ Р¶РµР»С‚Р°СЏ, Р»РёР±Рѕ РєСЂР°СЃРЅР°СЏ РґРІРµСЂСЊ РїСЂР°РІРёР»СЊРЅР°СЏ',
 	function(doors, rightDoor) {
           /*var statement2 = doors[2].truthfull || doors[1].truthfull;
           var statement1 = rightDoor === 2;
@@ -33,12 +33,12 @@ window.onload = function() {
           return this.truthfull? statement1 : !statement1;*/
 	  return this.truthfull ^ (!doors[2].truthfull);
         }));
-  doors.push(new Door('Красная', null, 1, 'Ты не выберешь эту дверь',
+  doors.push(new Door('РљСЂР°СЃРЅР°СЏ', null, 1, 'РўС‹ РЅРµ РІС‹Р±РµСЂРµС€СЊ СЌС‚Сѓ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           return this.truthfull ? rightDoor !== 1 : rightDoor === 1;
         }));
   
-  doors.push(new Door('Желтая', null, 2, 'Ты выберешь синюю дверь',
+  doors.push(new Door('Р–РµР»С‚Р°СЏ', null, 2, 'РўС‹ РІС‹Р±РµСЂРµС€СЊ СЃРёРЅСЋСЋ РґРІРµСЂСЊ',
         function(doors, rightDoor) {
           return this.truthfull ? rightDoor === 0 : rightDoor !== 0;
         }));
@@ -125,7 +125,7 @@ window.onload = function() {
   </style>
 </head>
 <body>
-  <p> 1 или 0 дверей правильные </p>
+  <p> 1 РёР»Рё 0 РґРІРµСЂРµР№ РїСЂР°РІРёР»СЊРЅС‹Рµ </p>
   <div id="doors">
     
   </div> 
