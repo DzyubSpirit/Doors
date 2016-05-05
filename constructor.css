@@ -1,0 +1,47 @@
+#roomRule input {
+	width: 30px;
+}
+
+#doorPlus {
+	float: left;
+	background-image: url('img/plus.png');
+	margin-top: 25px;
+	border: 1px solid black;
+}
+
+.doorDelete {
+	background-image: url('img/delete.png');
+	margin: auto;
+}
+
+.rulePlus {
+	background-image: url('img/plus.png');
+}
+
+#doorPlus, .doorDelete, .rulePlus {
+	background-size: 100% 100%;
+	width: 25px;
+	height: 25px;
+}
+
+#doorPlus:hover, .rulePlus:hover {
+	box-shadow: 0 0 10px blue;
+}
+
+.doorDelete:hover {
+	box-shadow: 0 0 10px red;
+}
+
+#doors > div > select {
+	width: 90px;
+}
+
+#doors > div > textarea {
+	width: 140px;
+}
+
+.rule {
+	border: 1px solid black;
+	padding: 3px;
+	margin: 0 1px;
+}
