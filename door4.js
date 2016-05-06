@@ -41,7 +41,7 @@ doors.push(new Door('Синяя', null, 2,
     var statement = ((!doors[1].truthfull) && (!doors[0].truthfull)) ^ (rightDoor !== 2);
     return this.truthfull ? statement : !statement;
   }));
-var rightDoorPos = 1;
+var rightDoorPos = 2;
 
 var mainRule = roomRule(1, 1, 1);  
 mainRule.text = 'Ровно 1 дверь правдива';
