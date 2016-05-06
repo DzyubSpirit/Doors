@@ -36,7 +36,7 @@ doors.push(new Door('Красная', null, 1,
   }));
 
 doors.push(new Door('Синяя', null, 2, 
-  'Либо красная и желтая двери неправдивы, либо синяя дверь ведут к смерти',
+  'Либо красная и желтая двери неправдивы, либо синяя дверь ведёт к смерти',
   function(doors, rightDoor) {
     var statement = ((!doors[1].truthfull) && (!doors[0].truthfull)) ^ (rightDoor !== 2);
     return this.truthfull ? statement : !statement;

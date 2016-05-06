@@ -25,7 +25,7 @@ doors.push(new Door('Желтая', null, 0,
     return this.truthfull? statement : !statement;
   }));
 doors.push(new Door('Зеленая', null, 1, 
-  'Синяя и красная двери неправильные',
+  'Синяя и красная двери неправдивая',
   function(doors, rightDoor) {
     var statement = (!doors[2].truthfull) && (!doors[4].truthfull);
     return this.truthfull ? statement : !statement;
@@ -42,7 +42,7 @@ doors.push(new Door('Синяя', null, 2,
     return this.truthfull ? statement1 : !statement1;
   }));
 doors.push(new Door('Фиолетовая', null, 2, 
-  'Зеленая, синяя или красная дверь ведет к Дзюбе<br/>Ты выберешь неправильную дверь',
+  'Зеленая, синяя или красная дверь ведет к Дзюбе<br/>Ты выберешь неправдивую дверь',
   function(doors, rightDoor) {
     var statement1 = rightDoor === 1 || rightDoor === 2 || rightDoor === 4;
     var statement2 = !doors[rightDoor].truthfull;
@@ -52,7 +52,7 @@ doors.push(new Door('Фиолетовая', null, 2,
     return this.truthfull ? statement1 : !statement1;
   }));
 doors.push(new Door('Красная', null, 2, 
-  'Фиолетовая дверь неправильная<br/>Желтая дверь ведет к Дзюбе',
+  'Фиолетовая дверь неправдивая<br/>Желтая дверь ведет к Дзюбе',
   function(doors, rightDoor) {
     var statement1 = !doors[3].truthfull;
     var statement2 = rightDoor === 0;
@@ -65,4 +65,4 @@ doors.push(new Door('Красная', null, 2,
 var rightDoorPos = 4;
 
 var mainRule = roomRule(2, 2, 4);  
-mainRule.text = 'Ровно 2 двери правильны';
+mainRule.text = 'Ровно 2 двери правдивы';

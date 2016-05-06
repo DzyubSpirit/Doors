@@ -19,7 +19,7 @@ return elem.truthfull;
 
 var doors = [];
 doors.push(new Door('Синяя', null, 0,
- 'Желтая дверь ведет к Дзюбе',//'Желтая дверь ведет к Дзюбе<br/>Либо желтая, либо красная дверь правильная',
+ 'Желтая дверь ведет к Дзюбе',//'Желтая дверь ведет к Дзюбе<br/>Либо желтая, либо красная дверь правдивая',
   function(doors, rightDoor) {
         /*var statement2 = doors[2].truthfull || doors[1].truthfull;
         var statement1 = rightDoor === 2;
@@ -45,4 +45,4 @@ doors.push(new Door('Желтая', null, 2,
 var rightDoorPos = 1;
 
 var mainRule = roomRule(0, 1, 1);  
-mainRule.text = '0 или 1 дверь правильные';
+mainRule.text = '0 или 1 дверь правдивая';
