@@ -20,6 +20,8 @@ window.onload = function() {
         var maxTruthfull = +document.getElementsByName('maxTruthfull')[0].value;
         for (var i = 0; i < doorElems.children.length; i++) {
             var doorElem = doorElems.children[i];
+            var selectColorElem = doorElem.querySelector('.select-colors');
+            var selectShapeElem = doorElem.querySelector('.select-shapes');
             var ruleElems = doorElem.querySelector('.rules').children;
             var rulesInfo = [];
             for (var j = 0; j < ruleElems.length; j++) {
@@ -33,10 +35,12 @@ window.onload = function() {
                     doorStatus: selectedDoorStatus
                 });
             }
+            doors[i].color = colors[selectColorElem.selectedIndex];
+            doors[i].shape = shapes[selectShapeElem.selectedIndex];
             doors[i].rule = (function(rulesInfo) {
                 return function(doors, rightDoor) {
                     if (rulesInfo.length === 0) {
-                        return true;
+                        return true;    
                     }
                     var pr = checkRule(rulesInfo[0]);
                     for (var i = 1; i < rulesInfo.length; i++) {
@@ -50,6 +54,7 @@ window.onload = function() {
                         var colorDoors = doors.filter(function(el) {
                             return el.color === ruleInfo.color;
                         });
+                        console.log(colorDoors);
                         var checkFunc;
                         switch (ruleInfo.doorStatus) {
                             case 0: {
@@ -105,9 +110,11 @@ window.onload = function() {
 
         var colorSpan = document.createTextNode('Color: ');
         var colorBox = createSelectBox(colors);
+        colorBox.classList.add('select-colors');
 
         var shapeSpan = document.createTextNode('Shape: ');
         var shapeBox = createSelectBox(shapes);
+        shapeBox.classList.add('select-shapes');
 
         var textSpan = document.createTextNode('Text: ');
         var rulePlus = document.createElement('div');
@@ -182,7 +189,8 @@ window.onload = function() {
     	      	}
     	      	var pr = false;
     	      	for (var i = 0; i < doors.length; i++) {
-    	        	if (!doors[i].rule(doors, rightDoor)) {
+    	        	
+                    if (!doors[i].rule(doors, rightDoor)) {
     	          		pr = true;
     	          		break;
     	        	}
